@@ -12,18 +12,18 @@ const HeaderMobile = () => {
 	return (
 		<div className={style.header}>
 			<div className={style.title}>
-				<a onClick={toggleSidebar}>
+				<span onClick={toggleSidebar}>
 					<Icons.Bars height={'20px'} />
-				</a>
+				</span>
 			</div>
 			<div
 				className={clsx(style.sidebar, {
 					[style.active]: sidebar,
 				})}>
 				<div className={style.closedBtn}>
-					<a onClick={toggleSidebar}>
+					<span onClick={toggleSidebar}>
 						<Icons.XMark height={'20px'} />
-					</a>
+					</span>
 				</div>
 				<div className={clsx(style.item, style.item1)}>Home</div>
 				<div className={style.item}>Project</div>

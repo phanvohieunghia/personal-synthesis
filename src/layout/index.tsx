@@ -11,9 +11,10 @@ const Layout = () => {
 	}, [])
 	useEffect(() => {
 		function handleStateDevice(e: any) {
-			setStateDevice(e.innerWidth > 475)
+			console.log(e.target.innerWidth)
+			setStateDevice(e.target.innerWidth > 475)
 		}
-		window.addEventListener('resize', (e: any) => handleStateDevice(e.target))
+		window.addEventListener('resize', (e: any) => handleStateDevice(e))
 		return window.removeEventListener('resize', (e: any) =>
 			handleStateDevice(e.target)
 		)
