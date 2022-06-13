@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import style from './css.module.scss'
 
 const Header = () => {
-	console.log(style)
 	return (
 		<div className={style.header}>
 			<div className={clsx(style.wrapper, 'container')}>

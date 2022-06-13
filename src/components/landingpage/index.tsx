@@ -2,9 +2,10 @@ import clsx from 'clsx'
 
 import style from './css.module.scss'
 import Icons from 'assets/icons'
+import Button from 'components/button'
+import PopupButton from 'components/popup/button'
 
 const LandingPage = () => {
-	console.log(style)
 	return (
 		<>
 			<section className={style.banner}>
@@ -35,8 +36,63 @@ const LandingPage = () => {
 				</div>
 				<div className={clsx(style.content, 'col-6 col-sm-12')}>
 					<h3>About Me</h3>
+					<h4>Who Am I</h4>
 					<div className={style.description}>Hello</div>
-					<div className='do'>Do la mau do</div>
+					<Button color='black'>Get My Portfolio</Button>
+					<Button>
+						<PopupButton />
+						Get My Portfolio
+					</Button>
+				</div>
+			</section>
+			<section className={clsx(style.project, 'container')}>
+				<div className='col-4'>
+					<div className={style.wrapper}>
+						<div className={style.img}>
+							<img src={require('assets/img/item.png')} alt='error png' />
+						</div>
+						<h3>WebDeveloper</h3>
+						<div className={style.description}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+							hendrerit.
+						</div>
+						<div className={style.btn}>
+							<Button color='black'>Detail</Button>
+							<Button>Michael</Button>
+						</div>
+					</div>
+				</div>
+				<div className='col-4'>
+					<div className={style.wrapper}>
+						<div className={style.img}>
+							<img src={require('assets/img/item.png')} alt='error png' />
+						</div>
+						<h3>WebDeveloper</h3>
+						<div className={style.description}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+							hendrerit.
+						</div>
+						<div className={style.btn}>
+							<Button color='black'>Detail</Button>
+							<Button>Michael</Button>
+						</div>
+					</div>
+				</div>
+				<div className='col-4'>
+					<div className={style.wrapper}>
+						<div className={style.img}>
+							<img src={require('assets/img/item.png')} alt='error png' />
+						</div>
+						<h3>WebDeveloper</h3>
+						<div className={style.description}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
+							hendrerit.
+						</div>
+						<div className={style.btn}>
+							<Button color='black'>Detail</Button>
+							<Button>Michael</Button>
+						</div>
+					</div>
 				</div>
 			</section>
 		</>

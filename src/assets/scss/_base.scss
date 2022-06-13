@@ -70,6 +70,11 @@ a {
 	}
 }
 body {
+	@include media('screen', '>laptopM') {
+		.container {
+			max-width: 1320px;
+		}
+	}
 	@include media('screen', '<laptopM') {
 		.container {
 			max-width: 1140px;

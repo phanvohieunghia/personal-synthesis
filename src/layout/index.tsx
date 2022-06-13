@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 import Header from 'components/header'
 import HeaderMobile from 'components/header-mb'
-
+import Popup from 'components/popup'
 const Layout = () => {
 	const [stateDevice, setStateDevice] = useState<boolean>(true)
 	useLayoutEffect(() => {
@@ -11,7 +11,6 @@ const Layout = () => {
 	}, [])
 	useEffect(() => {
 		function handleStateDevice(e: any) {
-			console.log(e.target.innerWidth)
 			setStateDevice(e.target.innerWidth > 475)
 		}
 		window.addEventListener('resize', (e: any) => handleStateDevice(e))
@@ -21,6 +20,7 @@ const Layout = () => {
 	}, [stateDevice])
 	return (
 		<>
+			<Popup />
 			{!stateDevice && <HeaderMobile />}
 			{stateDevice && <Header />}
 			<Outlet />
