@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"name": "UTO",
+		"img": "project1.jpg",
+		"path": "https://uto.vercel.app/"
+	},
+	{
+		"id": 2,
+		"name": "Spinner",
+		"img": "project2.jpg",
+		"path": "https://spinner-uto.vercel.app/"
+	},
+	{
+		"id": 3,
+		"name": "SQF Game",
+		"img": "project3.jpg",
+		"path": "https://sqf-game.vercel.app/"
+	}
+]

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import style from './css.module.scss'
 import Icons from 'assets/icons'
 import clsx from 'clsx'
+import data from 'assets/data/header.json'
 
 const HeaderMobile = () => {
 	const [sidebar, setSidebar] = useState<boolean>(false)
@@ -25,8 +26,14 @@ const HeaderMobile = () => {
 						<Icons.XMark height={'20px'} />
 					</span>
 				</div>
-				<div className={clsx(style.item, style.item1)}>Home</div>
-				<div className={style.item}>Project</div>
+				{data.map((item: any, i) => (
+					<div
+						className={clsx(style.item, {
+							[style.item1]: i === 0,
+						})}>
+						{item.name}
+					</div>
+				))}
 			</div>
 		</div>
 	)

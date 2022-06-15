@@ -4,6 +4,7 @@ import style from './css.module.scss'
 import Icons from 'assets/icons'
 import Button from 'components/button'
 import PopupButton from 'components/popup/button'
+import ProjectItem from 'assets/data/project-item.json'
 
 const LandingPage = () => {
 	return (
@@ -46,54 +47,30 @@ const LandingPage = () => {
 				</div>
 			</section>
 			<section className={clsx(style.project, 'container')}>
-				<div className='col-4'>
-					<div className={style.wrapper}>
-						<div className={style.img}>
-							<img src={require('assets/img/item.png')} alt='error png' />
+				{ProjectItem.map((item) => {
+					return (
+						<div className='col-4' key={item.id}>
+							<div className={style.wrapper}>
+								<div className={style.img}>
+									<img
+										src={require(`assets/img/${item.img}`)}
+										alt='error png'
+									/>
+								</div>
+								<h3>{item.name}</h3>
+								<div className={style.description}>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+									Pharetra, hendrerit.
+								</div>
+								<div className={style.btn}>
+									<a href={item.path}>
+										<Button color='black'>Visit</Button>
+									</a>
+								</div>
+							</div>
 						</div>
-						<h3>WebDeveloper</h3>
-						<div className={style.description}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
-							hendrerit.
-						</div>
-						<div className={style.btn}>
-							<Button color='black'>Detail</Button>
-							<Button>Michael</Button>
-						</div>
-					</div>
-				</div>
-				<div className='col-4'>
-					<div className={style.wrapper}>
-						<div className={style.img}>
-							<img src={require('assets/img/item.png')} alt='error png' />
-						</div>
-						<h3>WebDeveloper</h3>
-						<div className={style.description}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
-							hendrerit.
-						</div>
-						<div className={style.btn}>
-							<Button color='black'>Detail</Button>
-							<Button>Michael</Button>
-						</div>
-					</div>
-				</div>
-				<div className='col-4'>
-					<div className={style.wrapper}>
-						<div className={style.img}>
-							<img src={require('assets/img/item.png')} alt='error png' />
-						</div>
-						<h3>WebDeveloper</h3>
-						<div className={style.description}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra,
-							hendrerit.
-						</div>
-						<div className={style.btn}>
-							<Button color='black'>Detail</Button>
-							<Button>Michael</Button>
-						</div>
-					</div>
-				</div>
+					)
+				})}
 			</section>
 		</>
 	)

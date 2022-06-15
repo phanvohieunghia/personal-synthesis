@@ -1,6 +1,8 @@
 import clsx from 'clsx'
+import { Link } from 'react-router-dom'
 
 import style from './css.module.scss'
+import data from 'assets/data/header.json'
 
 const Header = () => {
 	return (
@@ -8,9 +10,11 @@ const Header = () => {
 			<div className={clsx(style.wrapper, 'container')}>
 				<div className={style.left}>PVHN</div>
 				<div className='right'>
-					<span>Home</span>
-					<span>Skill</span>
-					<span>Project</span>
+					{data.map((item: any, i) => (
+						<span key={i}>
+							<Link to={item.path}>{item.name}</Link>
+						</span>
+					))}
 				</div>
 			</div>
 		</div>

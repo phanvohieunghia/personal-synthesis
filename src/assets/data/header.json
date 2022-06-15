@@ -1,0 +1,21 @@
+[
+	{
+		"name": "Home",
+		"path": "/"
+	},
+
+	{
+		"name": "Skill",
+		"path": "/"
+	},
+
+	{
+		"name": "Project",
+		"path": "/"
+	},
+
+	{
+		"name": "Collects",
+		"path": "collects"
+	}
+]
