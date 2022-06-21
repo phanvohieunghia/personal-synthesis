@@ -46,34 +46,85 @@ const LandingPage = () => {
 					</Button>
 				</div>
 			</section>
-			<section className={clsx(style.project, 'container')}>
-				{ProjectItem.map((item) => {
-					return (
-						<div className='col-4' key={item.id}>
-							<div className={style.wrapper}>
-								<div className={style.img}>
-									<img
-										src={require(`assets/img/${item.img}`)}
-										alt='error png'
-									/>
-								</div>
-								<h3>{item.name}</h3>
-								<div className={style.description}>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-									Pharetra, hendrerit.
-								</div>
-								<div className={style.btn}>
-									<a href={item.path}>
-										<Button color='black'>Visit</Button>
-									</a>
-								</div>
+			<section className={style.skill}>
+				<div className={style.title}>
+					What Skills I Have
+					<span>My Experience</span>
+				</div>
+				<div className={clsx('container', style.content)}>
+					<div className='col-6'>
+						<div className={style.wrapper}>
+							<div className={style.title}>Frontend Developer</div>
+							<div className={clsx(style.wrapper, 'container')}>
+								<Item>HTML</Item>
+								<Item>CSS</Item>
+								<Item>Javascript</Item>
+								<Item>React</Item>
+								<Item>Boostrap</Item>
+								<Item>Redux</Item>
+								<Item>SCSS</Item>
+								<Item>Typescript</Item>
 							</div>
 						</div>
-					)
-				})}
+					</div>
+					<div className='col-6'>
+						<div className={style.wrapper}>
+							<div className={style.title}>Backend Developer</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className={clsx(style.project, 'container')}>
+				<div className={style.title}>
+					What Projects I Have
+					<span>My Experience</span>
+				</div>
+				<div className={style.content}>
+					{ProjectItem.map((item) => {
+						return (
+							<div className='col-4' key={item.id}>
+								<div className={style.wrapper}>
+									<div className={style.img}>
+										<img
+											src={require(`assets/img/${item.img}`)}
+											alt='error png'
+										/>
+									</div>
+									<h3>{item.name}</h3>
+									<div className={style.description}>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+										Pharetra, hendrerit.
+									</div>
+									<div className={style.btn}>
+										<a href={item.path}>
+											<Button color='black'>Visit</Button>
+										</a>
+									</div>
+								</div>
+							</div>
+						)
+					})}
+				</div>
 			</section>
 		</>
 	)
 }
-
+interface ItemProps {
+	children: string
+}
+const Item = ({ children }: ItemProps) => {
+	return (
+		<div className='col-6'>
+			<div className={style.item}>
+				<div className={style.icon}>
+					<Icons.CheckMark height={'16'} />
+				</div>
+				<div className={style.content}>
+					<div className={style.name}>{children}</div>
+					<div className={style.level}>Experience</div>
+				</div>
+			</div>
+		</div>
+	)
+}
 export default LandingPage
