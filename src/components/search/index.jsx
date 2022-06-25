@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import style from './css.module.scss'
 import { useDebounce } from 'hooks'
 import Icons from 'assets/icons'
+import PopupButton from 'components/popup/button'
 
 const Search = () => {
 	const searchRef = useRef(null)
@@ -30,9 +31,10 @@ const Search = () => {
 
 	return (
 		<div className={style.search} ref={searchRef}>
+			<PopupButton />
 			<input
 				type='text'
-				placeholder='search'
+				placeholder='Search...'
 				value={searchValue}
 				onChange={(e) => setSearchValue(e.target.value)}
 				onFocus={handleFocusInput}

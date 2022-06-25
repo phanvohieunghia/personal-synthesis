@@ -4,6 +4,7 @@ import style from './css.module.scss'
 interface ButtonProps {
 	children: any
 	color?: 'white' | 'black'
+	path?: string
 }
 const Button = (props: ButtonProps) => {
 	return (
@@ -11,7 +12,7 @@ const Button = (props: ButtonProps) => {
 			className={clsx(style.button, {
 				[style.black]: props.color === 'black',
 			})}>
-			{props.children}
+			<a href={props.path}>{props.children}</a>
 		</button>
 	)
 }

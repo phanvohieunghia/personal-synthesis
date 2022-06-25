@@ -5,6 +5,7 @@ import Icons from 'assets/icons'
 import Button from 'components/button'
 import PopupButton from 'components/popup/button'
 import ProjectItem from 'assets/data/project-item.json'
+import ExperienceData from 'assets/data/experience.json'
 
 const LandingPage = () => {
 	return (
@@ -16,16 +17,28 @@ const LandingPage = () => {
 					<h3>Phan Võ Hiếu Nghĩa</h3>
 					<h2>Front-end Developer</h2>
 					<div className={style.contact}>
-						<a href='https://www.facebook.com/phanvohieunghia/'>
+						<a
+							target='_blank'
+							rel='noreferrer'
+							href='https://www.facebook.com/phanvohieunghia/'>
 							<Icons.Contact.Facebook height={'40px'} />
 						</a>
-						<a href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=phvohieunghia@gmail.com'>
+						<a
+							target='_blank'
+							rel='noreferrer'
+							href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=phvohieunghia@gmail.com'>
 							<Icons.Contact.Google height={'40px'} />
 						</a>
-						<a href='https://github.com/phvohieunghia'>
+						<a
+							target='_blank'
+							rel='noreferrer'
+							href='https://github.com/phvohieunghia'>
 							<Icons.Contact.Github height={'40px'} />
 						</a>
-						<a href='https://www.linkedin.com/in/phvohieunghia/'>
+						<a
+							target='_blank'
+							rel='noreferrer'
+							href='https://www.linkedin.com/in/phvohieunghia/'>
 							<Icons.Contact.LinkedIn height={'40px'} />
 						</a>
 					</div>
@@ -56,19 +69,14 @@ const LandingPage = () => {
 						<div className={style.wrapper}>
 							<div className={style.title}>Frontend Developer</div>
 							<div className={clsx(style.wrapper, 'container')}>
-								<Item>HTML</Item>
-								<Item>CSS</Item>
-								<Item>Javascript</Item>
-								<Item>React</Item>
-								<Item>Boostrap</Item>
-								<Item>Redux</Item>
-								<Item>SCSS</Item>
-								<Item>Typescript</Item>
+								{ExperienceData.frontend.map((item, i) => {
+									return <Item data={item} />
+								})}
 							</div>
 						</div>
 					</div>
 					<div className='col-6'>
-						<div className={style.wrapper}>
+						<div className={style.wrapper} style={{ height: '100%' }}>
 							<div className={style.title}>Backend Developer</div>
 						</div>
 					</div>
@@ -76,8 +84,8 @@ const LandingPage = () => {
 			</section>
 			<section className={clsx(style.project, 'container')}>
 				<div className={style.title}>
-					What Projects I Have
-					<span>My Experience</span>
+					My current work
+					<span>Portfolio</span>
 				</div>
 				<div className={style.content}>
 					{ProjectItem.map((item) => {
@@ -96,9 +104,10 @@ const LandingPage = () => {
 										Pharetra, hendrerit.
 									</div>
 									<div className={style.btn}>
-										<a href={item.path}>
-											<Button color='black'>Visit</Button>
-										</a>
+										<Button path={item.path_github}>Github</Button>
+										<Button color='black' path={item.path_demo}>
+											Demo
+										</Button>
 									</div>
 								</div>
 							</div>
@@ -110,9 +119,12 @@ const LandingPage = () => {
 	)
 }
 interface ItemProps {
-	children: string
+	data: {
+		name: string
+		level: string
+	}
 }
-const Item = ({ children }: ItemProps) => {
+const Item = ({ data }: ItemProps) => {
 	return (
 		<div className='col-6'>
 			<div className={style.item}>
@@ -120,8 +132,8 @@ const Item = ({ children }: ItemProps) => {
 					<Icons.CheckMark height={'16'} />
 				</div>
 				<div className={style.content}>
-					<div className={style.name}>{children}</div>
-					<div className={style.level}>Experience</div>
+					<div className={style.name}>{data.name}</div>
+					<div className={style.level}>{data.level}</div>
 				</div>
 			</div>
 		</div>

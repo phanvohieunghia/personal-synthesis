@@ -3,18 +3,21 @@
 		"id": 1,
 		"name": "UTO",
 		"img": "project1.jpg",
-		"path": "https://uto.vercel.app/"
+		"path_demo": "https://uto.vercel.app/",
+		"path_github": "https://github.com/phanvohieunghia/UTOEcommerce"
 	},
 	{
 		"id": 2,
 		"name": "Spinner",
 		"img": "project2.jpg",
-		"path": "https://spinner-uto.vercel.app/"
+		"path_demo": "https://spinner-uto.vercel.app/",
+		"path_github": "https://github.com/phanvohieunghia/spinner"
 	},
 	{
 		"id": 3,
 		"name": "SQF Game",
 		"img": "project3.jpg",
-		"path": "https://sqf-game.vercel.app/"
+		"path_demo": "https://sqf-game.vercel.app/",
+		"path_github": "https://github.com/phanvohieunghia/sqf-game"
 	}
 ]

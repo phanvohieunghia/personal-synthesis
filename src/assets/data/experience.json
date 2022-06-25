@@ -1,0 +1,16 @@
+{
+	"frontend": [
+		{ "name": "HTML", "level": "intermediate" },
+		{ "name": "CSS", "level": "intermediate" },
+		{ "name": "Javascript", "level": "intermediate" },
+		{ "name": "Boostrap", "level": "basic" },
+		{ "name": "React", "level": "intermediate" },
+		{ "name": "SCSS", "level": "intermediate" },
+		{ "name": "Redux", "level": "intermediate" },
+		{ "name": "Typescript", "level": "basic" }
+	],
+	"backend": [
+		{ "name": "Nodejs", "level": "basic" },
+		{ "name": "Nodejs", "level": "basic" }
+	]
+}

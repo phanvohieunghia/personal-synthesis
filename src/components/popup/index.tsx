@@ -12,7 +12,7 @@ const PopupSlice = () => {
 			const timeoutId = setTimeout(() => {
 				dispatch(popupSlice.actions.togglePopup(false))
 				return () => clearTimeout(timeoutId)
-			}, 1900)
+			}, 900)
 		}
 	}, [state, dispatch])
 	return <>{state && <div className={style.popup}>Coming Soon!</div>}</>
