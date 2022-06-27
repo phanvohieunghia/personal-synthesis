@@ -4,6 +4,8 @@ import { Outlet } from 'react-router-dom'
 import Header from 'components/header'
 import HeaderMobile from 'components/header-mb'
 import Popup from 'components/popup'
+import DetailCollect from 'app/collects/detail'
+
 const Layout = () => {
 	const [stateDevice, setStateDevice] = useState<boolean>(true)
 	useLayoutEffect(() => {
@@ -21,6 +23,7 @@ const Layout = () => {
 	return (
 		<>
 			<Popup />
+			<DetailCollect />
 			{!stateDevice && <HeaderMobile />}
 			{stateDevice && <Header />}
 			<Outlet />

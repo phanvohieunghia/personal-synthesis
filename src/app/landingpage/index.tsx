@@ -70,7 +70,7 @@ const LandingPage = () => {
 							<div className={style.title}>Frontend Developer</div>
 							<div className={clsx(style.wrapper, 'container')}>
 								{ExperienceData.frontend.map((item, i) => {
-									return <Item data={item} />
+									return <Item data={item} key={i} />
 								})}
 							</div>
 						</div>
