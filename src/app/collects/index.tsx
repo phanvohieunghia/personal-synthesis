@@ -1,10 +1,20 @@
-import style from './css.module.scss'
-import Search from 'components/search'
+import { useDispatch } from 'react-redux'
 import clsx from 'clsx'
+
+import style from './css.module.scss'
 import Icons, { IconList } from 'assets/icons'
+import Search from 'components/search'
 import PopupButton from 'components/popup/button'
+import collectDetailSlice from './detail/store'
+import { PrettyFormat } from 'components/common/pretty-format'
 
 const CollectsPage = () => {
+	const dispatch = useDispatch()
+	function handleItem(text: string, icon: JSX.Element) {
+		dispatch(
+			collectDetailSlice.actions.showCollectDetail({ value: text, icon })
+		)
+	}
 	return (
 		<div className={style.collect}>
 			<div className={style.head}>
@@ -47,11 +57,13 @@ const CollectsPage = () => {
 			<div className={style.main}>
 				<div className={clsx(style.list, 'container')}>
 					{IconList.map((item, i) => {
+						const formatted = PrettyFormat(<item.icon />)
 						return (
-							<div className={clsx(style.wrapper, 'col-2')}>
-								<div className={style.item}>
-									<PopupButton />
-									<item.icon height={'40px'} />
+							<div className={clsx(style.wrapper, 'col-2')} key={i}>
+								<div
+									className={style.item}
+									onClick={() => handleItem(formatted, <item.icon />)}>
+									<item.icon height={'40'} />
 									<div className={style.name}>{item.name}</div>
 								</div>
 							</div>

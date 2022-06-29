@@ -6,7 +6,7 @@ import data from 'assets/data/header.json'
 
 const Header = () => {
 	return (
-		<div className={style.header}>
+		<header className={style.header}>
 			<div className={clsx(style.wrapper, 'container')}>
 				<div className={style.left}>PVHN</div>
 				<div className='right'>
@@ -17,7 +17,7 @@ const Header = () => {
 					))}
 				</div>
 			</div>
-		</div>
+		</header>
 	)
 }
 
