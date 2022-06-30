@@ -30,6 +30,54 @@ const Google = ({ height = '20' }) => (
 		/>
 	</svg>
 )
+const Loading = ({ height = '20' }) => (
+	<svg
+		viewBox='0 0 16 16'
+		fill='none'
+		data-view-component='true'
+		className='anim-rotate'
+		height={height}
+		xmlns='http://www.w3.org/2000/svg'>
+		<circle
+			cx='8'
+			cy='8'
+			r='7'
+			stroke='currentColor'
+			strokeOpacity='0.25'
+			strokeWidth='2'
+			vectorEffect='non-scaling-stroke'></circle>
+		<path
+			d='M15 8a7.002 7.002 0 00-7-7'
+			stroke='currentColor'
+			strokeWidth='2'
+			strokeLinecap='round'
+			vectorEffect='non-scaling-stroke'></path>
+		<animateTransform
+			attributeName='transform'
+			attributeType='XML'
+			type='rotate'
+			dur='1s'
+			from='0 0 0'
+			to='360 0 0'
+			repeatCount='indefinite'
+		/>
+	</svg>
+)
+const Loading1 = ({ height = '20' }) => (
+	<svg height={height} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+		<path d='M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50'>
+			<animateTransform
+				attributeName='transform'
+				attributeType='XML'
+				type='rotate'
+				dur='1s'
+				from='0 50 50'
+				to='360 50 50'
+				repeatCount='indefinite'
+			/>
+		</path>
+	</svg>
+)
 const Contact = {
 	Facebook,
 	Google,
@@ -71,20 +119,35 @@ const List = ({ height = '20' }) => (
 		<path d='M16 96C16 69.49 37.49 48 64 48C90.51 48 112 69.49 112 96C112 122.5 90.51 144 64 144C37.49 144 16 122.5 16 96zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 416C16 389.5 37.49 368 64 368C90.51 368 112 389.5 112 416C112 442.5 90.51 464 64 464C37.49 464 16 442.5 16 416zM112 256C112 282.5 90.51 304 64 304C37.49 304 16 282.5 16 256C16 229.5 37.49 208 64 208C90.51 208 112 229.5 112 256z' />
 	</svg>
 )
+const Copy = ({ height = '20' }) => (
+	<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' height={height}>
+		<path
+			fillRule='evenodd'
+			d='M7.024 3.75c0-.966.784-1.75 1.75-1.75H20.25c.966 0 1.75.784 1.75 1.75v11.498a1.75 1.75 0 01-1.75 1.75H8.774a1.75 1.75 0 01-1.75-1.75V3.75zm1.75-.25a.25.25 0 00-.25.25v11.498c0 .139.112.25.25.25H20.25a.25.25 0 00.25-.25V3.75a.25.25 0 00-.25-.25H8.774z'></path>
+		<path d='M1.995 10.749a1.75 1.75 0 011.75-1.751H5.25a.75.75 0 110 1.5H3.745a.25.25 0 00-.25.25L3.5 20.25c0 .138.111.25.25.25h9.5a.25.25 0 00.25-.25v-1.51a.75.75 0 111.5 0v1.51A1.75 1.75 0 0113.25 22h-9.5A1.75 1.75 0 012 20.25l-.005-9.501z'></path>
+	</svg>
+)
 const Icons = {
+	Contact,
 	Bars,
 	XMark,
-	Contact,
 	Search,
 	CheckMark,
 	GridLarge,
 	GridSmall,
 	List,
+	Loading,
+	Loading1,
+	Copy,
 }
 
 export default Icons
 
 export const IconList = [
+	{ icon: Icons.Contact.Facebook, name: 'Facebook' },
+	{ icon: Icons.Contact.Google, name: 'Google' },
+	{ icon: Icons.Contact.LinkedIn, name: 'LinkedIn' },
+	{ icon: Icons.Contact.Github, name: 'Github' },
 	{ icon: Icons.Bars, name: 'Bars' },
 	{ icon: Icons.XMark, name: 'XMark' },
 	{ icon: Icons.Search, name: 'Search' },
@@ -92,8 +155,6 @@ export const IconList = [
 	{ icon: Icons.GridLarge, name: 'GridLarge' },
 	{ icon: Icons.GridSmall, name: 'GridSmall' },
 	{ icon: Icons.List, name: 'List' },
-	{ icon: Icons.Contact.Facebook, name: 'Facebook' },
-	{ icon: Icons.Contact.Google, name: 'Google' },
-	{ icon: Icons.Contact.LinkedIn, name: 'LinkedIn' },
-	{ icon: Icons.Contact.Github, name: 'Github' },
+	{ icon: Icons.Loading, name: 'Loading' },
+	{ icon: Icons.Copy, name: 'Copy' },
 ]

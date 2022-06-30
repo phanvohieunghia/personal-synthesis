@@ -8,7 +8,7 @@ type InitialState = {
 const initialState: InitialState = {
 	status: false,
 	value: '',
-	icon: null,
+	icon: <></>,
 }
 export default createSlice({
 	name: 'collectDetail',
@@ -19,9 +19,10 @@ export default createSlice({
 			state.value = action.payload.value
 			state.icon = action.payload.icon
 		},
-		closeCollectDetail: (state, action: PayloadAction<string>) => {
+		closeCollectDetail: (state, action: PayloadAction<InitialState>) => {
 			state.status = false
-			state.value = action.payload
+			state.value = action.payload.value
+			state.icon = null
 		},
 	},
 })
