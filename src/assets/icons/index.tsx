@@ -30,12 +30,6 @@ const Google = ({ height = '20' }) => (
 		/>
 	</svg>
 )
-const Contact = {
-	Facebook,
-	Google,
-	LinkedIn,
-	Github,
-}
 const Loading = ({ height = '20' }) => (
 	<svg
 		viewBox='0 0 16 16'
@@ -134,8 +128,19 @@ const Check = ({ height = '20' }) => (
 			d='M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z'></path>
 	</svg>
 )
+const Link = ({ height = '20' }) => (
+	<svg height={height} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+		<rect height={height} opacity='0' />
+		<path d='M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z' />
+		<path d='M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z' />
+	</svg>
+)
+
 const Icons = {
-	Contact,
+	Facebook,
+	Google,
+	LinkedIn,
+	Github,
 	Bars,
 	XMark,
 	Search,
@@ -147,23 +152,97 @@ const Icons = {
 	Loading1,
 	Copy,
 	Check,
+	Link,
 }
 
 export default Icons
 
 export const IconList = [
-	{ icon: Icons.Contact.Facebook, name: 'Facebook' },
-	{ icon: Icons.Contact.Google, name: 'Google' },
-	{ icon: Icons.Contact.LinkedIn, name: 'LinkedIn' },
-	{ icon: Icons.Contact.Github, name: 'Github' },
-	{ icon: Icons.Bars, name: 'Bars' },
-	{ icon: Icons.XMark, name: 'XMark' },
-	{ icon: Icons.Search, name: 'Search' },
-	{ icon: Icons.CheckMark, name: 'CheckMark' },
-	{ icon: Icons.GridLarge, name: 'GridLarge' },
-	{ icon: Icons.GridSmall, name: 'GridSmall' },
-	{ icon: Icons.List, name: 'List' },
-	{ icon: Icons.Loading, name: 'Loading' },
-	{ icon: Icons.Copy, name: 'Copy' },
-	{ icon: Icons.Check, name: 'Check' },
+	{
+		icon: Icons.Facebook,
+		name: 'Facebook',
+		reference: 'https://iconmonstr.com/facebook-3-svg/',
+	},
+	{
+		icon: Icons.Google,
+		name: 'Google',
+		reference: 'https://iconmonstr.com/google-plus-3-svg/',
+	},
+	{
+		icon: Icons.LinkedIn,
+		name: 'LinkedIn',
+		reference: 'https://iconmonstr.com/linkedin-3-svg/',
+	},
+	{
+		icon: Icons.Github,
+		name: 'Github',
+		reference: 'https://iconmonstr.com/github-3-svg/',
+	},
+	{
+		icon: Icons.Bars,
+		name: 'Bars',
+		reference: 'https://fontawesome.com/icons/bars?s=solid',
+	},
+	{
+		icon: Icons.XMark,
+		name: 'XMark',
+		reference: 'https://iconmonstr.com/x-mark-8-svg/',
+	},
+	{
+		icon: Icons.Search,
+		name: 'Search',
+		reference: 'https://icons8.com/icons/set/search',
+	},
+	{
+		icon: Icons.CheckMark,
+		name: 'CheckMark',
+		reference: 'https://iconmonstr.com/check-mark-6-svg/',
+	},
+	{
+		icon: Icons.GridLarge,
+		name: 'GridLarge',
+		reference: 'https://fontawesome.com/search',
+	},
+	{
+		icon: Icons.GridSmall,
+		name: 'GridSmall',
+		reference: 'https://fontawesome.com/search',
+	},
+	{
+		icon: Icons.List,
+		name: 'List',
+		reference: 'https://fontawesome.com/search',
+	},
+	{
+		icon: Icons.Loading,
+		name: 'Loading',
+		reference: 'https://primer.style/octicons/',
+	},
+	{
+		icon: Icons.Copy,
+		name: 'Copy',
+		reference: 'https://primer.style/octicons/',
+	},
+	{
+		icon: Icons.Check,
+		name: 'Check',
+		reference: 'https://primer.style/octicons/',
+	},
+	{
+		icon: Icons.Link,
+		name: 'Link',
+		reference: 'https://www.svgrepo.com/svg/305221/external-link',
+	},
+]
+export const RelativeIcons = [
+	{ name: 'fontawesome', reference: 'https://fontawesome.com/' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
+	{ name: '', reference: '' },
 ]

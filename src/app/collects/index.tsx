@@ -10,9 +10,13 @@ import { PrettyFormat } from 'components/common/pretty-format'
 
 const CollectsPage = () => {
 	const dispatch = useDispatch()
-	function handleItem(text: string, icon: JSX.Element) {
+	function handleItem(text: string, icon: JSX.Element, reference: string) {
 		dispatch(
-			collectDetailSlice.actions.showCollectDetail({ value: text, icon })
+			collectDetailSlice.actions.showCollectDetail({
+				value: text,
+				icon,
+				reference,
+			})
 		)
 	}
 	return (
@@ -62,7 +66,9 @@ const CollectsPage = () => {
 							<div className={clsx(style.wrapper, 'col-2')} key={i}>
 								<div
 									className={style.item}
-									onClick={() => handleItem(formatted, <item.icon />)}>
+									onClick={() =>
+										handleItem(formatted, <item.icon />, item.reference)
+									}>
 									<item.icon height={'40'} />
 									<div className={style.name}>{item.name}</div>
 								</div>

@@ -21,25 +21,25 @@ const LandingPage = () => {
 							target='_blank'
 							rel='noreferrer'
 							href='https://www.facebook.com/phanvohieunghia/'>
-							<Icons.Contact.Facebook height={'40px'} />
+							<Icons.Facebook height={'40px'} />
 						</a>
 						<a
 							target='_blank'
 							rel='noreferrer'
 							href='https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=phvohieunghia@gmail.com'>
-							<Icons.Contact.Google height={'40px'} />
+							<Icons.Google height={'40px'} />
 						</a>
 						<a
 							target='_blank'
 							rel='noreferrer'
 							href='https://github.com/phvohieunghia'>
-							<Icons.Contact.Github height={'40px'} />
+							<Icons.Github height={'40px'} />
 						</a>
 						<a
 							target='_blank'
 							rel='noreferrer'
 							href='https://www.linkedin.com/in/phvohieunghia/'>
-							<Icons.Contact.LinkedIn height={'40px'} />
+							<Icons.LinkedIn height={'40px'} />
 						</a>
 					</div>
 				</div>

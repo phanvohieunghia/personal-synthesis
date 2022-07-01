@@ -26,15 +26,26 @@ const CollectDetail = () => {
 					className={style.detail}
 					onClick={() =>
 						dispatch(
-							slice.actions.closeCollectDetail({ value: '', icon: null })
+							slice.actions.closeCollectDetail({
+								value: '',
+								icon: null,
+								reference: '',
+							})
 						)
 					}>
 					<div className={style.wrapper} onClick={(e) => e.stopPropagation()}>
 						<div className={style.head}>
+							<a href={state.reference}>
+								<Icons.Link height={'20'} />
+							</a>
 							<span
 								onClick={() =>
 									dispatch(
-										slice.actions.closeCollectDetail({ value: '', icon: null })
+										slice.actions.closeCollectDetail({
+											value: '',
+											icon: null,
+											reference: '',
+										})
 									)
 								}>
 								<Icons.XMark height={'20'} />
@@ -50,7 +61,10 @@ const CollectDetail = () => {
 								<span className={style.button}>
 									<CopyButton ref={copyButtonRef} />
 								</span>
-								<pre style={{ maxHeight: window.innerHeight * 0.8 - 45 - 30 }}>
+								<pre
+									style={{
+										maxHeight: window.innerHeight * 0.8 - 45 - 30,
+									}}>
 									<code className='language-markup'>{state.value}</code>
 								</pre>
 							</div>
