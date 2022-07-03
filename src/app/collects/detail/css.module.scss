@@ -36,11 +36,22 @@
 			&:hover .button {
 				opacity: 1;
 			}
-			.icon {
-				align-self: center;
-				text-align: center;
-				svg {
-					height: 100px;
+			.left {
+				align-self: stretch;
+				text-align: left;
+				position: relative;
+				.name {
+					font-size: 3rem;
+				}
+				.icon {
+					display: inline-flex;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					svg {
+						height: 100px;
+					}
 				}
 			}
 			.code {

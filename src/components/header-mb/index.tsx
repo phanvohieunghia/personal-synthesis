@@ -30,7 +30,8 @@ const HeaderMobile = () => {
 					<div
 						className={clsx(style.item, {
 							[style.item1]: i === 0,
-						})}>
+						})}
+						key={i}>
 						{item.name}
 					</div>
 				))}

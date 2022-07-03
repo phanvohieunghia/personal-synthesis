@@ -2,13 +2,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type InitialState = {
 	status?: boolean
-	value: string
+	name: string
+	code: string
 	icon: JSX.Element | null
 	reference: string
 }
 const initialState: InitialState = {
 	status: false,
-	value: '',
+	name: '',
+	code: '',
 	icon: <></>,
 	reference: '',
 }
@@ -18,14 +20,17 @@ export default createSlice({
 	reducers: {
 		showCollectDetail: (state, action: PayloadAction<InitialState>) => {
 			state.status = true
-			state.value = action.payload.value
+			state.name = action.payload.name
+			state.code = action.payload.code
 			state.icon = action.payload.icon
 			state.reference = action.payload.reference
 		},
 		closeCollectDetail: (state, action: PayloadAction<InitialState>) => {
 			state.status = false
-			state.value = action.payload.value
-			state.icon = null
+			state.name = action.payload.name
+			state.code = action.payload.code
+			state.icon = action.payload.icon
+			state.reference = action.payload.reference
 		},
 	},
 })

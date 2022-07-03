@@ -11,9 +11,9 @@ const Header = () => {
 				<div className={style.left}>PVHN</div>
 				<div className='right'>
 					{data.map((item: any, i) => (
-						<span key={i}>
-							<Link to={item.path}>{item.name}</Link>
-						</span>
+						<Link to={item.path}>
+							<span key={i}>{item.name}</span>
+						</Link>
 					))}
 				</div>
 			</div>

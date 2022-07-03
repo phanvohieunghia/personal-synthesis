@@ -1,5 +1,6 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Layout from 'layout'
+import BlankLayout from 'layout/blank'
 
 import LandingPage from 'app/landingpage'
 import CollectsPage from 'app/collects'
@@ -14,6 +15,7 @@ const Router = () => {
 					<Route path='/' element={<LandingPage />} />
 					<Route path='collects' element={<CollectsPage />} />
 				</Route>
+				<Route path='/blank' element={<BlankLayout />} />
 				<Route path='*' element={<NotFoundPage />} />
 			</Routes>
 		</BrowserRouter>

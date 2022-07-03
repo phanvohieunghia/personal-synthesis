@@ -1,12 +1,12 @@
 import { useEffect, useRef, MouseEvent } from 'react'
-import { useDispatch } from 'react-redux'
 
 import style from './css.module.scss'
 import popupSlice from '../store'
+import { useAppDispatch } from 'hooks'
 
 const Button = () => {
 	const mainRef = useRef<any>(null)
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const handlePopup = (e: MouseEvent) => {
 		dispatch(popupSlice.actions.togglePopup(true))
 		e.stopPropagation()

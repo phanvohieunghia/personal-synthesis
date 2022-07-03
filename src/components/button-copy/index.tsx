@@ -29,7 +29,7 @@ const ButtonCopy = (props: any, ref: any) => {
 			ref={ref}>
 			{state === 0 && <Icons.Copy />}
 			{state === 1 && <Icons.Loading />}
-			{state === 2 && <Icons.Check />}
+			{state === 2 && <Icons.Check color={'green'} />}
 		</button>
 	)
 }

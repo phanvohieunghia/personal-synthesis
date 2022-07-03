@@ -1,12 +1,12 @@
+import { useAppDispatch, useAppSelector } from 'hooks'
 import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 
 import style from './css.module.scss'
 import popupSlice from './store'
 
 const PopupSlice = () => {
-	const dispatch = useDispatch()
-	const state = useSelector<any>((state) => state.popup.sooncoming)
+	const dispatch = useAppDispatch()
+	const state = useAppSelector<any>((state) => state.popup.sooncoming)
 	useEffect(() => {
 		if (state) {
 			const timeoutId = setTimeout(() => {

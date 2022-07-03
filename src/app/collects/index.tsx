@@ -1,4 +1,3 @@
-import { useDispatch } from 'react-redux'
 import clsx from 'clsx'
 
 import style from './css.module.scss'
@@ -7,13 +6,20 @@ import Search from 'components/search'
 import PopupButton from 'components/popup/button'
 import collectDetailSlice from './detail/store'
 import { PrettyFormat } from 'components/common/pretty-format'
+import { useAppDispatch } from 'hooks'
 
 const CollectsPage = () => {
-	const dispatch = useDispatch()
-	function handleItem(text: string, icon: JSX.Element, reference: string) {
+	const dispatch = useAppDispatch()
+	function handleItem(
+		name: string,
+		code: string,
+		icon: JSX.Element,
+		reference: string
+	) {
 		dispatch(
 			collectDetailSlice.actions.showCollectDetail({
-				value: text,
+				name,
+				code,
 				icon,
 				reference,
 			})
@@ -67,7 +73,12 @@ const CollectsPage = () => {
 								<div
 									className={style.item}
 									onClick={() =>
-										handleItem(formatted, <item.icon />, item.reference)
+										handleItem(
+											item.name,
+											formatted,
+											<item.icon />,
+											item.reference
+										)
 									}>
 									<item.icon height={'40'} />
 									<div className={style.name}>{item.name}</div>
