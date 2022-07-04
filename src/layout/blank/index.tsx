@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import style from './css.module.scss'
 import FacebookLogin from 'react-facebook-login'
-import { GoogleLogin } from 'react-google-login'
+import GoogleLogin from 'react-google-login'
 
 const responseFacebook = (response: any) => {
 	console.log(response)
@@ -15,21 +15,21 @@ const BlankPage = () => {
 	}
 	return (
 		<div className={clsx(style.blank, 'container')}>
-			<button>Login by Facebook</button>
-			<FacebookLogin
+			{/* <FacebookLogin
 				appId='420382206641287'
 				autoLoad={true}
 				fields='name,email,picture'
 				onClick={handleFacebook}
 				callback={responseFacebook}
-			/>
+			/> */}
 			<GoogleLogin
-				clientId='269244489322-ubfba8u5g3p991eu3ci87icdov6pfpqi.apps.googleusercontent.com'
-				buttonText='Login'
+				clientId={
+					'330830489852-m2hsjojbrf1keb8985ni99p719ib35h9.apps.googleusercontent.com'
+				}
 				onSuccess={responseGoogle}
 				onFailure={responseGoogle}
 				cookiePolicy={'single_host_origin'}
-			/>
+				buttonText={'Log in with Google'}></GoogleLogin>
 		</div>
 	)
 }
