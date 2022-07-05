@@ -1,0 +1,38 @@
+.login {
+	margin-top: 200px;
+	height: 100vh;
+	.button {
+		text-align: center;
+		button {
+			display: inline-flex;
+			align-items: center;
+			border: unset;
+			border-radius: 10px;
+			margin: 0 10px;
+			span {
+				display: flex;
+				padding: 10px;
+				color: #fff;
+				font-size: 16px;
+				font-weight: 700;
+			}
+		}
+		button.google {
+			background-color: #f14436;
+		}
+		button.facebook {
+			background-color: #385c8e;
+		}
+	}
+	.result {
+		margin-top: 100px;
+		margin-left: 20%;
+		font-size: 2rem;
+		.photo {
+			width: 100px;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}

@@ -24,6 +24,18 @@ const Facebook = (props: IIconProps) => {
 		</svg>
 	)
 }
+const Facebook2 = (props: IIconProps) => {
+	const { height = '20', color = '#104088' } = props
+	return (
+		<svg
+			height={height}
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 24 24'
+			fill={color}>
+			<path d='M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z' />
+		</svg>
+	)
+}
 const LinkedIn = (props: IIconProps) => {
 	const { height = '20' } = props
 	return (
@@ -45,6 +57,22 @@ const Google = (props: IIconProps) => {
 			<path
 				d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-10.333 16.667c-2.581 0-4.667-2.087-4.667-4.667s2.086-4.667 4.667-4.667c1.26 0 2.313.46 3.127 1.22l-1.267 1.22c-.347-.333-.954-.72-1.86-.72-1.593 0-2.893 1.32-2.893 2.947s1.3 2.947 2.893 2.947c1.847 0 2.54-1.327 2.647-2.013h-2.647v-1.6h4.406c.041.233.074.467.074.773-.001 2.666-1.787 4.56-4.48 4.56zm11.333-4h-2v2h-1.334v-2h-2v-1.333h2v-2h1.334v2h2v1.333z'
 				fill='#DC4E41'
+			/>
+		</svg>
+	)
+}
+const Google2 = (props: IIconProps) => {
+	const { height = '20', color } = props
+	return (
+		<svg
+			xmlns='httpprops.height//www.w3.org/2000/svg'
+			height={height}
+			viewBox='0 0 24 24'
+			fill={color}>
+			<path
+				d='M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z'
+				fillRule='evenodd'
+				clipRule='evenodd'
 			/>
 		</svg>
 	)
@@ -241,7 +269,9 @@ const InfinityIcon = (props: IIconProps) => {
 }
 const Icons = {
 	Facebook,
+	Facebook2,
 	Google,
+	Google2,
 	LinkedIn,
 	Github,
 	Bars,
@@ -268,9 +298,19 @@ export const IconList = [
 		reference: 'https://iconmonstr.com/facebook-3-svg/',
 	},
 	{
+		icon: Icons.Facebook2,
+		name: 'Facebook',
+		reference: 'https://iconmonstr.com/facebook-1-svg/',
+	},
+	{
 		icon: Icons.Google,
 		name: 'Google',
 		reference: 'https://iconmonstr.com/google-plus-3-svg/',
+	},
+	{
+		icon: Icons.Google2,
+		name: 'Google',
+		reference: 'https://iconmonstr.com/google-plus-1-svg/',
 	},
 	{
 		icon: Icons.LinkedIn,

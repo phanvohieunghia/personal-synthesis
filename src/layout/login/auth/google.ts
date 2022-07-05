@@ -4,9 +4,9 @@ import { auth } from './config'
 const provider = new GoogleAuthProvider()
 
 export const signInWithGoogle = () => {
-	signInWithPopup(auth, provider)
+	return signInWithPopup(auth, provider)
 		.then((result) => {
-			console.log(result)
+			return result
 		})
 		.catch((error) => {
 			console.log(error)
