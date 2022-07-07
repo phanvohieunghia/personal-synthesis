@@ -33,7 +33,7 @@ const LoginPage = () => {
 					<span>Sign up with Facebook</span>
 				</button>
 			</div>
-			{true && (
+			{!!user && (
 				<div className={style.result}>
 					<div className={style.name}>
 						<span>Name: </span>

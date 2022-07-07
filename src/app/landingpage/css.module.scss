@@ -87,6 +87,7 @@
 	flex-wrap: wrap;
 	.img {
 		text-align: center;
+		padding-right: 60px;
 		> img {
 			width: 100%;
 		}
@@ -96,13 +97,14 @@
 			font-size: 4rem;
 		}
 		h4 {
-			font-size: 8rem;
+			font-size: 5rem;
 			color: #c4c4c4;
 			text-transform: uppercase;
 			line-height: 1.2;
 		}
 		.description {
-			font-size: 1.6rem;
+			font-size: 2rem;
+			margin-bottom: 50px;
 		}
 	}
 }

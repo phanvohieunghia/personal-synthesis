@@ -12,7 +12,9 @@ const Button = (props: ButtonProps) => {
 			className={clsx(style.button, {
 				[style.black]: props.color === 'black',
 			})}>
-			<a href={props.path}>{props.children}</a>
+			<a href={props.path} target='_blank' rel='noopener noreferrer'>
+				{props.children}
+			</a>
 		</button>
 	)
 }

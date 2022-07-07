@@ -3,13 +3,14 @@ import clsx from 'clsx'
 import style from './css.module.scss'
 import Icons from 'assets/icons'
 import Button from 'components/button'
-import PopupButton from 'components/popup/button'
 import ProjectItem from 'assets/data/project-item.json'
 import ExperienceData from 'assets/data/experience.json'
+import myCV from 'assets/data/mycv.pdf'
+import ScrollView from 'components/scrollview'
 
 const LandingPage = () => {
 	return (
-		<>
+		<ScrollView>
 			<section className={style.banner}>
 				<div className={style.center}></div>
 				<div className={style.content}>
@@ -51,12 +52,12 @@ const LandingPage = () => {
 				<div className={clsx(style.content, 'col-6 col-sm-12')}>
 					<h3>About Me</h3>
 					<h4>Who Am I</h4>
-					<div className={style.description}>Hello</div>
-					<Button color='black'>Get My Portfolio</Button>
-					<Button>
-						<PopupButton />
-						Get My Portfolio
-					</Button>
+					<div className={style.description}>
+						I have the desire to become front-end developer. I'm passionate
+						about building excellent website that improves the lives of those
+						around me.
+					</div>
+					<Button path={myCV}>Get My CV</Button>
 				</div>
 			</section>
 			<section className={style.skill}>
@@ -115,7 +116,7 @@ const LandingPage = () => {
 					})}
 				</div>
 			</section>
-		</>
+		</ScrollView>
 	)
 }
 interface ItemProps {

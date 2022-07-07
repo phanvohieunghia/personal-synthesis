@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import popupSlice from 'components/popup/store'
 import collectDetailSlice from 'app/collects/detail/store'
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { getDefaultMiddleware } from '@reduxjs/toolkit'
 
 const store = configureStore({
