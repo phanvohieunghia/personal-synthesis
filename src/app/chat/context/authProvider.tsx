@@ -29,7 +29,6 @@ const AuthProvider = ({ children }: { children: any }) => {
 	const navigate = useNavigate()
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
-			console.log(user)
 			if (user) {
 				const { displayName, email, uid, photoURL } = user
 				setUser({
@@ -39,11 +38,11 @@ const AuthProvider = ({ children }: { children: any }) => {
 					photoURL,
 				})
 				setIsLoading(false)
-				navigate('/chat', { replace: true })
+				navigate('/chat')
 				return
 			}
 			setIsLoading(false)
-			navigate('/login', { replace: false })
+			navigate('/login')
 		})
 		return () => unsubscribe()
 	}, [navigate])

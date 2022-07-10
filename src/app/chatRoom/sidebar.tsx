@@ -1,6 +1,11 @@
+import { useEffect } from 'react'
 import { Button, Row, Col, Avatar, Typography, Collapse } from 'antd'
 import styled from 'styled-components'
 import { PlusOutlined } from '@ant-design/icons'
+import { signOut } from 'firebase/auth'
+import { collection, onSnapshot } from 'firebase/firestore'
+
+import { auth, db } from 'firebases/config'
 
 const SidebarStyled = styled.div.attrs((props) => ({
 	color: props.color,
@@ -32,7 +37,13 @@ const LinkStyled = styled(Typography.Link)`
 		margin-left: 20px;
 	}
 `
-const sidebar = () => {
+const Sidebar = () => {
+	useEffect(() => {
+		onSnapshot(collection(db, 'users'), (snapshot) => {
+			console.log(snapshot)
+			snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+		})
+	}, [])
 	return (
 		<SidebarStyled color={'#bd93f9'}>
 			<Row>
@@ -42,7 +53,9 @@ const sidebar = () => {
 							<Avatar>A</Avatar>
 							<Typography.Text className='text'>ABC</Typography.Text>
 						</div>
-						<Button ghost>Log out</Button>
+						<Button ghost onClick={() => signOut(auth)}>
+							Log out
+						</Button>
 					</UserInfoStyled>
 				</Col>
 				<Col span={24}>
@@ -63,4 +76,4 @@ const sidebar = () => {
 	)
 }
 
-export default sidebar
+export default Sidebar

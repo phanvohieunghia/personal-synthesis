@@ -1,25 +1,35 @@
-import { Row, Col, Typography, Button } from 'antd'
-import { useNavigate } from 'react-router-dom'
 import {
 	FacebookAuthProvider,
 	signInWithPopup,
 	onAuthStateChanged,
+	getAdditionalUserInfo,
 } from 'firebase/auth'
+import { Row, Col, Typography, Button } from 'antd'
+import { useNavigate } from 'react-router-dom'
+// import { doc, setDoc } from 'firebase/firestore'
 
 import './css.scss'
 import { auth } from 'firebases/config'
-
-const { Title } = Typography
+import { addDocument } from 'firebases/service'
 
 const fbProivder = new FacebookAuthProvider()
 
 const Chat = () => {
 	const navigate = useNavigate()
 	const handleFacebookLogin = () => {
-		signInWithPopup(auth, fbProivder)
+		signInWithPopup(auth, fbProivder).then((result: any) => {
+			if (getAdditionalUserInfo(result)?.isNewUser) {
+				addDocument('users', {
+					displayName: result.user.displayName,
+					email: result.user.email,
+					photoURL: result.user.photoURL,
+					uid: result.user.displayName,
+					providerId: result.providerId,
+				})
+			}
+		})
 	}
 	onAuthStateChanged(auth, (user) => {
-		console.log({ user })
 		if (user) {
 			navigate('chat', { replace: true })
 		}
@@ -28,9 +38,9 @@ const Chat = () => {
 		<div>
 			<Row justify='center' style={{ height: 800 }}>
 				<Col span={8}>
-					<Title style={{ textAlign: 'center' }} level={3}>
+					<Typography.Title style={{ textAlign: 'center' }} level={3}>
 						Fun Chat
-					</Title>
+					</Typography.Title>
 					<Button
 						style={{
 							width: '100%',
