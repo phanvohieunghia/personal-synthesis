@@ -48,7 +48,7 @@ const LinkedIn = (props: IIconProps) => {
 	)
 }
 const Google = (props: IIconProps) => {
-	const { height = '20' } = props
+	const { height = '20', color = '#DC4E41' } = props
 	return (
 		<svg
 			xmlns='httpprops.height//www.w3.org/2000/svg'
@@ -56,13 +56,13 @@ const Google = (props: IIconProps) => {
 			viewBox='0 0 24 24'>
 			<path
 				d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-10.333 16.667c-2.581 0-4.667-2.087-4.667-4.667s2.086-4.667 4.667-4.667c1.26 0 2.313.46 3.127 1.22l-1.267 1.22c-.347-.333-.954-.72-1.86-.72-1.593 0-2.893 1.32-2.893 2.947s1.3 2.947 2.893 2.947c1.847 0 2.54-1.327 2.647-2.013h-2.647v-1.6h4.406c.041.233.074.467.074.773-.001 2.666-1.787 4.56-4.48 4.56zm11.333-4h-2v2h-1.334v-2h-2v-1.333h2v-2h1.334v2h2v1.333z'
-				fill='#DC4E41'
+				fill={color}
 			/>
 		</svg>
 	)
 }
 const Google2 = (props: IIconProps) => {
-	const { height = '20', color } = props
+	const { height = '20', color = '#DC4E41' } = props
 	return (
 		<svg
 			xmlns='httpprops.height//www.w3.org/2000/svg'

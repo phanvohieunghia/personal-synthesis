@@ -1,3 +1,4 @@
+@import 'antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 @import 'assets/fonts/Itim/style.css';
 @import './valuable';
@@ -8,6 +9,14 @@
 	padding: 0;
 	box-sizing: inherit;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0;
+}
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
@@ -15,7 +24,8 @@ html {
 	line-height: 1.5;
 }
 body {
-	font-family: 'Itim';
+	font-family: 'Itim' !important;
+	font-size: 1.6rem;
 }
 a {
 	text-decoration: none;
@@ -55,7 +65,6 @@ a {
 		width: 66.6666667%;
 	}
 	.col-9 {
-		flex: 0 0 auto;
 		width: 75%;
 	}
 	.col-10 {

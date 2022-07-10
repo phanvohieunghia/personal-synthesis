@@ -43,7 +43,6 @@
 		left: 20%;
 		transform: translateY(-50%);
 		font-family: 'Roboto';
-		color: $white-color;
 		letter-spacing: 2px;
 		word-spacing: 4px;
 		@include media('screen', '<mobileL') {
@@ -53,6 +52,7 @@
 			text-align: center;
 		}
 		h2 {
+			color: $white-color;
 			font-size: 3.6rem;
 			font-weight: 100;
 			@include media('screen', '<mobileL') {
@@ -60,6 +60,7 @@
 			}
 		}
 		h3 {
+			color: $white-color;
 			font-size: 4rem;
 			font-weight: 700;
 			@include media('screen', '<mobileL') {
@@ -142,7 +143,7 @@
 	}
 }
 .project {
-	margin-bottom: 100px;
+	padding-bottom: 100px;
 	> .title {
 		text-align: center;
 		font-size: 2rem;
@@ -200,7 +201,6 @@
 			font-weight: 700;
 		}
 		.level {
-			font-size: 1.6rem;
 			color: #ccc;
 		}
 	}

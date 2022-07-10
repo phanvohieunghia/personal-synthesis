@@ -9,12 +9,10 @@ const LoginPage = () => {
 	const [user, setUser] = useState<any>(null)
 	async function loginGoogle() {
 		const result: any = await signInWithGoogle()
-		console.log(result)
 		setUser(result.user)
 	}
 	async function loginFacebook() {
 		const result: any = await signInWithFacebook()
-		console.log(result)
 		setUser(result.user)
 	}
 	return (

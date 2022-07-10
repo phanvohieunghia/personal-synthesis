@@ -6,15 +6,14 @@ interface PropsType {
 const ScrollView = (props: PropsType) => {
 	const { children } = props
 	const scrollRef = useRef<HTMLDivElement>(null)
-	const screenHeight = window.screen.height
+	const screenHeight = window.innerHeight
 	function HandleScrolling(e: WheelEvent) {
 		if (e.deltaY > 0 && window.scrollY < screenHeight) {
 			e.preventDefault()
-			window.scrollTo({ top: window.screen.height, behavior: 'smooth' })
+			window.scrollTo({ top: screenHeight, behavior: 'smooth' })
 		} else if (e.deltaY < 0 && window.scrollY <= screenHeight) {
 			e.preventDefault()
 			window.scrollTo({ top: 0, behavior: 'smooth' })
-			// scrollRef.current?.scrollIntoView(true)
 		}
 	}
 	window.addEventListener('wheel', (e) => HandleScrolling(e), {
