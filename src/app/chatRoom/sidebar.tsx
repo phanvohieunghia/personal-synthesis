@@ -1,11 +1,12 @@
-import { useEffect } from 'react'
+import { useContext } from 'react'
 import { Button, Row, Col, Avatar, Typography, Collapse } from 'antd'
 import styled from 'styled-components'
 import { PlusOutlined } from '@ant-design/icons'
 import { signOut } from 'firebase/auth'
-import { collection, onSnapshot } from 'firebase/firestore'
 
-import { auth, db } from 'firebases/config'
+import { auth } from 'firebases/config'
+import { AuthContext } from 'app/chat/context/authProvider'
+import { AppContext } from 'app/chat/context/appProvider'
 
 const SidebarStyled = styled.div.attrs((props) => ({
 	color: props.color,
@@ -37,21 +38,25 @@ const LinkStyled = styled(Typography.Link)`
 		margin-left: 20px;
 	}
 `
+
 const Sidebar = () => {
-	useEffect(() => {
-		onSnapshot(collection(db, 'users'), (snapshot) => {
-			console.log(snapshot)
-			snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-		})
-	}, [])
+	const data = useContext(AuthContext)
+	const { rooms, setIsAddRoomVisible } = useContext(AppContext)
+	const handleRoomModal = () => {
+		setIsAddRoomVisible(true)
+	}
 	return (
 		<SidebarStyled color={'#bd93f9'}>
 			<Row>
 				<Col span={24}>
 					<UserInfoStyled>
 						<div>
-							<Avatar>A</Avatar>
-							<Typography.Text className='text'>ABC</Typography.Text>
+							<Avatar src={data.photoURL}>
+								{data.photoURL ? '' : data.photoURL?.charAt(0)?.toUpperCase()}
+							</Avatar>
+							<Typography.Text className='text'>
+								{data.displayName}
+							</Typography.Text>
 						</div>
 						<Button ghost onClick={() => signOut(auth)}>
 							Log out
@@ -61,11 +66,14 @@ const Sidebar = () => {
 				<Col span={24}>
 					<Collapse ghost>
 						<PanelStyled header='Room List' key={1}>
-							<LinkStyled>Room 1</LinkStyled>
-							<LinkStyled>Room 2</LinkStyled>
-							<LinkStyled>Room 3</LinkStyled>
-							<LinkStyled>Room 4</LinkStyled>
-							<Button type='text' icon={<PlusOutlined />} className='add-room'>
+							{rooms.map((room: any, i: any) => (
+								<LinkStyled key={i}>{room.name}</LinkStyled>
+							))}
+							<Button
+								type='text'
+								icon={<PlusOutlined />}
+								className='add-room'
+								onClick={handleRoomModal}>
 								Add room
 							</Button>
 						</PanelStyled>

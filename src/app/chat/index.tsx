@@ -6,7 +6,6 @@ import {
 } from 'firebase/auth'
 import { Row, Col, Typography, Button } from 'antd'
 import { useNavigate } from 'react-router-dom'
-// import { doc, setDoc } from 'firebase/firestore'
 
 import './css.scss'
 import { auth } from 'firebases/config'

@@ -12,23 +12,29 @@ import LoginChatPage from 'app/chat'
 import ChatRoomPage from 'app/chatRoom'
 
 import AuthProvider from 'app/chat/context/authProvider'
+import AppProvider from 'app/chat/context/appProvider'
+
+import Modal from 'app/chat/modal'
 const Router = () => {
 	return (
 		<BrowserRouter>
 			<AuthProvider>
-				<Routes>
-					<Route path='/' element={<Layout />}>
-						<Route path='/' element={<LandingPage />} />
-						<Route path='collects' element={<CollectsPage />} />
-					</Route>
+				<AppProvider>
+					<Routes>
+						<Route path='/' element={<Layout />}>
+							<Route path='/' element={<LandingPage />} />
+							<Route path='collects' element={<CollectsPage />} />
+						</Route>
 
-					<Route path='/' element={<BlankLayout />}>
-						<Route path='login-demo' element={<LoginDemoPage />} />
-						<Route path='login' element={<LoginChatPage />} />
-						<Route path='chat' element={<ChatRoomPage />} />
-					</Route>
-					<Route path='*' element={<NotFoundPage />} />
-				</Routes>
+						<Route path='/' element={<BlankLayout />}>
+							<Route path='login-demo' element={<LoginDemoPage />} />
+							<Route path='login' element={<LoginChatPage />} />
+							<Route path='chat' element={<ChatRoomPage />} />
+						</Route>
+						<Route path='*' element={<NotFoundPage />} />
+					</Routes>
+					<Modal />
+				</AppProvider>
 			</AuthProvider>
 		</BrowserRouter>
 	)
