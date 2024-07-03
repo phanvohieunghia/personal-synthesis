@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 
-import style from './css.module.scss'
-import Icons from 'assets/icons'
-import Button from 'components/button'
-import ProjectItem from 'assets/data/project-item.json'
 import ExperienceData from 'assets/data/experience.json'
 import myCV from 'assets/data/mycv.pdf'
+import ProjectItem from 'assets/data/project-item.json'
+import Icons from 'assets/icons'
+import Button from 'components/button'
 import ScrollView from 'components/scrollview'
+import style from './css.module.scss'
 
 const LandingPage = () => {
 	return (
@@ -39,7 +39,7 @@ const LandingPage = () => {
 						<a
 							target='_blank'
 							rel='noreferrer'
-							href='https://www.linkedin.com/in/phvohieunghia/'>
+							href='https://www.linkedin.com/in/phanvohieunghia/'>
 							<Icons.LinkedIn height={'40px'} />
 						</a>
 					</div>
